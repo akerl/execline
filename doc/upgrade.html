@@ -1,0 +1,463 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <title>How to upgrade execline</title>
+    <meta name="Description" content="How to upgrade execline" />
+    <meta name="Keywords" content="execline installation upgrade" />
+    <!-- <link rel="stylesheet" type="text/css" href="http://skarnet.org/default.css" /> -->
+  </head>
+<body>
+
+<p>
+<a href="index.html">execline</a><br />
+<a href="http://skarnet.org/software/">Software</a><br />
+<a href="http://skarnet.org/">skarnet.org</a>
+</p>
+
+<h2> to 1.3.1.1 </h2>
+
+<ul>
+ <li> skalibs dependency bumped to 1.6.0.0 </li>
+ <li> The <tt>for</tt>, <tt>forbacktick</tt> and <tt>loopwhile</tt>
+commands have been removed. </li>
+ <li> Support for the <tt>-E</tt> option has been removed from
+<a href="backtick.html"> backtick</a>,
+<a href="forx.html">forx</a> and
+<a href="forbacktickx.html">forbacktickx</a>. </li>
+</ul>
+
+<h2> to 1.3.1 </h2>
+
+<ul>
+ <li> skalibs dependency bumped to 1.5.0 </li>
+</ul>
+
+<h2> to 1.3.0 </h2>
+
+<p>
+ No change in dependencies. However:
+</p>
+
+<ul>
+ <li> The <tt>execline</tt> launcher has been removed. </li>
+ <li> The <tt>-e</tt> option is now the default for
+<a href="backtick.html"> backtick</a>,
+<a href="forx.html">forx</a> and
+<a href="forbacktickx.html">forbacktickx</a>. </li>
+ <li>
+ The <tt>LASTEXITCODE</tt> and <tt>LASTPID</tt> environment variables
+have been renamed <tt>?</tt> and <tt>!</tt> respectively. This is for
+consistency with shell behaviour and decreased environment namespace
+pollution. The old behaviour can still be accessed when compiling
+with <tt>-DEXECLINE_OLD_VARNAMES</tt>, for compatibility only.
+ </li>
+</ul>
+
+<h2> to 1.2.4 </h2>
+
+<p>
+ No change in dependencies, but it is always advised to use the
+latest version of skalibs.
+</p>
+
+<h1> How to upgrade execline </h1>
+
+<h2> to 1.2.3 </h2>
+
+<p>
+ This release is for skalibs-1.4.1 compatibility. You can still
+build it with previous versions of skalibs, but it is recommended
+to use skalibs-1.4.1 or later.
+</p>
+
+<h2> to 1.2.2 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+ <a href="http://skarnet.org/software/skalibs/">skalibs</a> package,
+ version 1.4.0 or later,
+ installed on your system in order to build execline. </li>
+</ul>
+
+<p>
+ The run-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Unless you have built the execline package with the
+ <a href="flags.html#allstatic">flag-allstatic</a> flag, you need the
+ <a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+ version 1.4.0 or later,
+ installed on your system in order to run it. </li>
+</ul>
+
+<h2> to 1.2.1 </h2>
+
+<p>
+ No changes.
+</p>
+
+<h2> to 1.2.0 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+ <a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+ version 1.3.0 or later,
+ installed on your system in order to build execline. </li>
+</ul>
+
+<p>
+ The run-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Unless you have built the execline package with the
+ <a href="flags.html#allstatic">flag-allstatic</a> flag, you need the
+ <a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+ version 1.3.0 or later,
+ installed on your system in order to run it. </li>
+</ul>
+
+<p>
+ FHS support has been added. See the end of
+<a href="http://www.skarnet.org/software/skalibs/slashpackage.html">this page</a>
+for the rationale, and the
+<a href="http://www.skarnet.org/software/conf-compile.html">general skarnet.org
+configuration page</a> for how to proceed.
+ <br />
+ This means you can now install the execline binaries wherever you want. <br />
+ However, since execline binaries sometimes
+call other execline binaries, and non-slashpackage installations cannot
+guarantee absolute paths, execline programs now rely on the PATH environment
+variable to find all their executables on non-slashpackage installations; in
+other words, if you are not extra careful with how you are setting up your
+PATH, things might break. (Pay special attention if you have the
+<a href="http://www.imagemagick.org/">ImageMagick</a> software installed,
+because it comes with an executable named
+<a href="http://www.imagemagick.org/script/import.php">import</a>; make sure
+there is no possible confusion with execline's <a href="import.html">import</a>.)
+</p> 
+
+<p>
+ The block quote character and terminator have been changed. The quote
+character is now a space and the terminator an empty word. This means that
+execline programs (like <a href="foreground.html">foreground</a>) from
+earlier releases will be incompatible with the new launchers, and
+vice versa. Always use a set of execline programs from the same release.
+</p>
+
+<h2> to 1.1.6 </h2>
+
+<p>
+ No change in dependencies. It is always recommended to use the latest release
+of skalibs to compile and/or run execline, though.
+</p>
+
+<h2> to 1.1.5 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 1.2.8 or later,
+installed on your system in order to build execline. </li>
+</ul>
+
+<p>
+ The run-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Unless you have built the execline package with the
+<a href="flags.html#allstatic">flag-allstatic</a> flag, you need the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 1.2.8 or later,
+installed on your system in order to run it. </li>
+</ul>
+
+<h2> to 1.1.4 </h2>
+
+<p>
+ No change in dependencies. Upgrade to skalibs-1.2.7 recommended.
+</p>
+
+<h2> to 1.1.3 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 1.2.5 or later,
+installed on your system in order to build execline. </li>
+</ul>                                   
+
+<p>
+ The run-time dependencies have changed.
+</p>
+
+<ul>                                                                                                                                                         
+ <li> Unless you have built the execline package with the
+<a href="flags.html#allstatic">flag-allstatic</a> flag, you need the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 1.2.5 or later,
+installed on your system in order to run it. </li>
+</ul>
+
+
+<h2> from 1.1.0 to 1.1.1 or 1.1.2 </h2>
+
+<p>
+ No change in dependencies. It is recommended to use skalibs version 1.1.1 or
+later, to benefit from bugfixes and enhancements.
+</p>
+
+<h2> from 1.08 to 1.1.0 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 1.0.0 or later,
+installed on your system in order to build execline. </li>
+</ul>
+
+<p>
+ The run-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Unless you have built the execline package with the
+<a href="flags.html#allstatic">flag-allstatic</a> flag, you need the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 1.0.0 or later,
+installed on your system in order to run it. </li>
+</ul>
+
+<h2> from 1.07 to 1.08 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.47 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul>
+
+<p>
+ Also note that if you're using compatibility links in <tt>/usr/local/bin</tt>,
+now you have to ask for them specifically after <tt>package/install</tt>,
+by executing - probably as root - <tt>package/compat</tt>.
+</p>
+
+<h2> from pre-1.07 to 1.07 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.46 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul>
+
+
+<h2> from pre-1.06 to 1.06 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.40 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul>
+
+<p>
+ <a href="import.html">import</a> and <a href="importas.html">importas</a>
+do not exhibit the same default behaviour when the variable does not
+exist. Now, <em>zero word</em> is substituted instead of the empty word.
+Add <tt>-D ""</tt> in your scripts to get the empty word.
+</p>
+
+<p>
+ The semantics of delimitors have been simplified and clarified - they
+are now word terminators. Crunching, chomping and splitting are now
+(quasi-)orthogonal operations. Most importantly, the default crunch
+behaviour for splitting substitution has been changed from crunching to
+non-crunching. Add <tt>-C</tt> in your scripts to get crunching
+behaviour.
+</p>
+
+
+<h2> from pre-1.05 to 1.05 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.29 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul>
+
+<h2> from pre-1.04 to 1.04 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.23 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul>
+
+<h2> from pre-1.02 to 1.02 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.22 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul>
+
+<h2> from 0.15 to 1.<em>y</em> </h2>
+
+<p>
+ Direct upgrades from pre-0.15 to 1.<em>y</em> are <strong>not</strong> supported.
+You must <strong>first</strong> upgrade to 0.15, <strong>then</strong>
+follow the procedure described here.
+</p>
+
+<ul>
+ <li> The build-time dependencies have changed.
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.21 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul></li>
+
+ <li> The <tt>execline-startup</tt> and <tt>execline-shell</tt> scripts
+are not provided in <tt>/command</tt> anymore, but in the execline
+package's <tt>etc/</tt> subdirectory. You should copy them to <tt>/etc</tt>,
+editing them as you need. Make sure that <tt>execline-startup</tt> sets
+<tt>SHELL</tt> to <tt>/etc/execline-shell</tt> instead of
+<tt>/command/execline-shell</tt>. Make sure that your users' login
+shell is <tt>/etc/execline-startup</tt> instead of
+<tt>/command/execline-startup</tt>. </li>
+
+ <li> The syntax has changed. Here is the procedure that you should
+use to convert your scripts to execline-1.<em>y</em> with least effort:
+
+ <ul>
+  <li> Convert all your scripts to use <a href="execlineb.html">execlineb</a>,
+in <em>strict</em> mode. Use only the brace syntax, and <strong>brace your
+blocks properly</strong>. Get rid of every bare semicolon in your scripts.
+If there are quoted semicolons left, unquote them. </li>
+
+  <li> Check every occurrence of the old <em>dollar expansion</em> mechanism
+in your scripts, namely every use of
+ <a href="define.html">define</a>,
+ <a href="importas.html">importas</a>,
+ <a href="import.html">import</a>,
+ <a href="backtick.html">backtick</a>,
+ <a href="for.html">for</a>,
+ and <a href="forbacktick.html">forbacktick</a>. Make sure they will not
+break when dollar expansion is replaced by the new
+<a href="el_substitute.html">variable substitution</a> mechanism.
+Pay special attention to put explicit braces around your variables. </li>
+
+  <li> Upgrade to execline-1.<em>y</em>. </li>
+
+  <li> Fix every remaining potential security hole in all your scripts
+by merging consecutive
+<a href="el_substitute.html">variable substitutions</a> into one
+<a href="multisubstitute.html">multisubstitute</a> command. </li>
+
+  <li> For a few days, check what your scripts are writing to stderr.
+If the message "<tt>warning: unquoted argument <em>foo</em> at block
+<em>bar</em> position <em>baz</em></tt>" appears, fix the blocks in
+your script immediately. </li>
+
+  <li> You can then remove <a href="execlineb.html">execlineb</a>'s
+strict mode. </li>
+ </ul>
+</ul>
+
+<h2> from 0.<em>x</em> to 0.<em>y</em>, <em>x</em>&lt;<em>y</em> </h2>
+
+<ul>
+ <li> Save your <tt>/package/admin/execline/command/execline-startup</tt> script before
+upgrading: the new version of <tt>execline-startup</tt> will override it. Put your
+script back into place after upgrading. </li>
+ <li> For safety, you could prevent users from logging in before the upgrade,
+and restore login ability after your <tt>execline-startup</tt> is back into
+place. </li>
+</ul>
+<p>
+ The right thing would be for execline to avoid overriding
+<tt>execline-startup</tt>. execline-1.<em>y</em> does that.
+</p>
+
+<h2> from pre-0.15 to 0.15 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.17 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul>
+
+<h2> from pre-0.14 to 0.14 </h2>
+
+<p>
+ The build-time dependencies have changed.
+</p>
+
+<ul>
+ <li> Now you need to have the
+<a href="http://www.skarnet.org/software/skalibs/">skalibs</a> package,
+version 0.10 or later,
+installed on your system in order to build <tt>execline</tt>. </li>
+</ul>
+
+</body>
+</html>

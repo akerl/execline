@@ -1,0 +1,33 @@
+<html>
+<head><title>unexport</title></head>
+<body>
+
+<a href="index.html">execline</a><br />
+<a href="http://www.skarnet.org/software/">Software</a><br />
+<a href="http://www.skarnet.org/">www.skarnet.org</a><p />
+
+<h1> The <tt>unexport</tt> program </h1>
+
+<tt>unexport</tt> removes a variable from the environment, then
+executes a program.
+
+<h2> Interface </h2>
+
+<pre>
+     unexport <em>var</em> <em>prog...</em>
+</pre>
+
+<tt>unexport</tt> removes the <em>var</em> variable from the
+environment, then execs into <em>prog</em> with
+its arguments.
+
+<h2> Notes </h2>
+
+<ul>
+ <li> Unsetting <em>var</em> is quite different from setting it to an
+empty value. Shell scripts usually won't make the distinction&nbsp;;
+<tt>execline</tt> does. </li>
+</ul><p />
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <title>How to install execline</title>
+    <meta name="Description" content="How to install execline" />
+    <meta name="Keywords" content="execline download installation" />
+    <!-- <link rel="stylesheet" type="text/css" href="http://skarnet.org/default.css" /> -->
+  </head>
+<body>
+
+<p>
+<a href="index.html">execline</a><br />
+<a href="http://skarnet.org/software/">Software</a><br />
+<a href="http://skarnet.org/">skarnet.org</a>
+</p>
+
+<h1> How to install execline </h1>
+
+<p>
+Like any other piece of software (and information generally),
+execline comes with NO WARRANTY.
+</p>
+
+<p>
+ Starting with release 1.1.0, execline is available under the terms of
+the <a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>,
+see the included <tt>package/COPYING</tt> file.
+</p>
+
+<h2> Requirements </h2>
+<h3> System </h3>
+
+<ul>
+ <li> A Unix-like system </li>
+</ul>
+
+
+<h3> Build-time </h3>
+
+<ul>
+ <li> A standard C development environment </li>
+ <li> The <a href="http://skarnet.org/software/skalibs/">skalibs</a> package, version 1.5.0 or higher </li>
+</ul>
+
+
+<h3> Run-time </h3>
+
+<p>
+ Depending on the way you compile and link execline:
+</p>
+
+<ul>
+ <li> No dependencies (static executables) </li>
+ <li> or a standard C run-time environment (dynamic executables with flag-allstatic) </li>
+ <li> or a standard C run-time environment, and the
+  <a href="http://skarnet.org/software/skalibs/">skalibs</a> package, version 1.5.0 or higher
+  (dynamic executables without flag-allstatic) </li>
+</ul>
+
+<h2> Installation </h2>
+
+<p>
+execline is best used with the
+<a href="http://cr.yp.to/slashpackage.html">slashpackage convention</a>,
+but it is not a hard requirement.
+</p>
+
+<ul>
+ <li> Create a <tt>/package</tt> directory:
+<pre>
+     mkdir -p /package
+     chmod 1755 /package
+     cd /package
+</pre>
+(If you are not following the slashpackage convention, you can use
+any temporary build directory instead.)
+ </li>
+ <li> Download the latest version of execline,
+<a href="execline-1.3.1.1.tar.gz">execline-1.3.1.1.tar.gz</a>,
+into <tt>/package</tt>. </li>
+
+ <li> Unpack the execline package:
+<pre>
+     tar -zxpvf execline-1.3.1.1.tar.gz
+     # if you do not have GNU tar, check with your gunzip and tar manual pages.
+     rm execline-1.3.1.1.tar.gz
+     cd admin/execline-1.3.1.1
+</pre> </li>
+
+<li> Configure the package by editing the files in <tt>conf-compile/</tt>
+following <a href="http://skarnet.org/software/conf-compile.html">these
+instructions</a>. The execline package also supports
+<a href="flags.html">this list of flags</a>. </li>
+
+<li> Compile and set up execline:
+<pre>
+     make
+     sudo make install
+</pre>
+ The compilation and installation processes are detailed
+ <a href="http://skarnet.org/software/compile.html">here</a>. </li>
+
+ <li> To save disk space:
+<pre>
+     make clean
+</pre> </li>
+</ul>
+
+</body>
+</html>

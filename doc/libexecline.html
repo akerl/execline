@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta http-equiv="Content-Language" content="en" />
+    <title>execline: the execline library</title>
+    <meta name="Description" content="execline: the execline library interface" />
+    <meta name="Keywords" content="execline library libexecline" />
+    <!-- <link rel="stylesheet" type="text/css" href="http://www.skarnet.org/default.css" /> -->
+  </head>
+<body>
+
+<p>
+<a href="index.html">execline</a><br />
+<a href="http://www.skarnet.org/software/">Software</a><br />
+<a href="http://www.skarnet.org/">www.skarnet.org</a>
+</p>
+
+<h1> The <tt>execline</tt> library interface </h1>
+
+<p>
+ The <tt>execline</tt> library has been designed to help
+programmers write applications suitable for use in <tt>execline</tt>
+scripts.
+</p>
+
+<h2> Compiling </h2>
+
+<ul>
+ <li> Add <tt>/package/admin/execline/include</tt>, or wherever you installed
+your header files, to your header directory list </li>
+ <li> Use <tt>#include "execline.h"</tt></li>
+</ul>
+
+
+<h2> Linking </h2>
+
+<ul>
+ <li> For static linking: add <tt>/package/admin/execline/library</tt> and
+<tt>/package/prog/skalibs/library</tt>, or wherever you installed your
+execline and skalibs .a files, to your library directory list. </li>
+ <li> For dynamic linking: add <tt>/package/admin/execline/library.so</tt>
+and <tt>/package/prog/skalibs/library.so</tt>,
+or wherever you installed your execline and skalibs .so files, to your
+library directory list -
+and make sure to properly edit your <tt>ld.so.conf</tt> file and to run
+<tt>ldconfig</tt> if needed. </li>
+ <li> Link with <tt>-lexecline</tt> and <tt>-lstddjb</tt> </li>
+</ul>
+
+
+<h2> Programming </h2>
+
+<p>
+ Check the <tt>execline.h</tt> header
+for the exact function prototypes.
+</p>
+
+<p>
+ The API will be documented when it is really stabilized.
+</p>
+
+</body>
+</html>

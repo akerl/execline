@@ -1,0 +1,21 @@
+#!/command/execlineb -S0
+
+# Copy that template to /etc/execline-startup .
+# Edit it to suit your needs.
+# Make /etc/execline-shell the users' login shell.
+# The users will do what they want in their ${HOME}/.execline-loginshell
+#  which should exec into ${SHELL} $@ to benefit from /etc/execline-shell
+#
+# Possible .execline-loginshell file:
+# #!/command/execlineb -S0
+# export PATH the-path-I-want
+# import SHELL
+# $SHELL $@
+
+import HOME
+export PATH "${HOME}/private/bin:${HOME}/bin:/command:/usr/bin:/bin"
+export SHELL /etc/execline-shell
+
+# Add your host-specific initialization here
+
+${HOME}/.execline-loginshell $@

@@ -1,0 +1,33 @@
+Jean Marot <marot@quatramaran.ens.fr>
+ - co-designer, debugger, tester
+
+Dan J. Bernstein <djb@cr.yp.to>
+ - Unix software design mentor
+
+Paul Jarc <prj@dogmap.org>
+ - design discussions, new quoting semantics, netstring idea, quines
+
+David Madore <david@madore.org>
+ - bugfixes
+ - quine
+ - more bugfixes and portability tests
+
+Nicolas George <cigaes@salle-s.org>
+ - ideas: globbing, splitting semantics
+
+Joël Riou <joel.riou@normalesup.org>
+ - bugfixes
+ - quine
+ - execline advocacy :)
+
+Matthew R. Dempsky <mrd@alkemio.org>
+ - null-delimited output idea
+
+Lasse Kliemann <lasse@plastictree.net>
+ - improvement suggestions
+
+Vallo Kallaste <kalts@estpak.ee>
+ - bugfixes
+
+Jorge Almeida <jalmeida@math.ist.utl.pt>
+ - bugfixes

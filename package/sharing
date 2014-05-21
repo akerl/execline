@@ -1,0 +1,12 @@
+command:syst
+compile:syst
+conf-compile:syst
+doc:dist
+etc:host
+include:syst
+library:syst
+library.so:syst
+man:dist
+package:dist
+service:host
+src:dist

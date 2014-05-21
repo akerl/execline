@@ -1,0 +1,30 @@
+<html>
+<head><title>umask</title></head>
+<body>
+
+<a href="index.html">execline</a><br />
+<a href="http://www.skarnet.org/software/">Software</a><br />
+<a href="http://www.skarnet.org/">www.skarnet.org</a><p />
+
+<h1> The <tt>umask</tt> program </h1>
+
+<tt>umask</tt> sets the umask (file creation mask),
+then executes a program.
+
+<h2> Interface </h2>
+
+<pre>
+     umask <em>mask</em> <em>prog...</em>
+</pre>
+
+<tt>umask</tt> sets the current umask to <em>mask</em>,
+then execs into <em>prog...</em>.
+
+<h2> Notes </h2>
+
+<tt>umask</tt> is a standard shell builtin. Be careful if you want to
+use the <tt>umask</tt> command outside of an <tt>execline</tt> script.
+
+<p />
+</body>
+</html>
