@@ -17,7 +17,8 @@ container:
 	./meta/launch
 
 deps:
-	rm -rf $(SKALIB_DIR)
+	rm -rf $(SKALIBS_DIR)
+	mkdir $(SKALIBS_DIR)
 	curl -sLo skalibs.tar.gz $(SKALIBS_URL)
 	tar -x -C $(SKALIBS_DIR) -f skalibs.tar.gz
 
