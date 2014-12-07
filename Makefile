@@ -2,8 +2,10 @@ PACKAGE = execline
 BUILD_DIR = /tmp/$(PACKAGE)-build
 RELEASE_DIR = /tmp/$(PACKAGE)-release
 RELEASE_FILE = $(PACKAGE).tar.gz
+
 SKALIBS_VERSION = 1.6.0.0
 SKALIBS_URL = https://github.com/akerl/skalibs/releases/download/$(SKALIBS_VERSION)/skalibs.tar.gz
+SKALIBS_TAR = skalibs.tar.gz
 SKALIBS_DIR = /tmp/skalibs
 
 .PHONY : default manual container build push local
@@ -17,10 +19,10 @@ container:
 	./meta/launch
 
 deps:
-	rm -rf $(SKALIBS_DIR)
+	rm -rf $(SKALIBS_DIR) $(SKALIBS_TAR)
 	mkdir $(SKALIBS_DIR)
-	curl -sLo skalibs.tar.gz $(SKALIBS_URL)
-	tar -x -C $(SKALIBS_DIR) -f skalibs.tar.gz
+	curl -sLo $(SKALIBS_TAR) $(SKALIBS_URL)
+	tar -x -C $(SKALIBS_DIR) -f $(SKALIBS_TAR)
 
 build: deps
 	rm -rf $(BUILD_DIR)
