@@ -1,0 +1,88 @@
+diff --git a/conf-compile/conf-install-command b/conf-compile/conf-install-command
+index 5e56e04..4cd0561 100644
+--- a/conf-compile/conf-install-command
++++ b/conf-compile/conf-install-command
+@@ -1 +1 @@
+-/bin
++/tmp/execline-release/bin
+diff --git a/conf-compile/conf-install-include b/conf-compile/conf-install-include
+index 0378b5b..7f9bc6f 100644
+--- a/conf-compile/conf-install-include
++++ b/conf-compile/conf-install-include
+@@ -1 +1 @@
+-/usr/include/execline
++/tmp/execline-release/usr/include/execline
+diff --git a/conf-compile/conf-install-libexec b/conf-compile/conf-install-libexec
+index f5da26d..9ece580 100644
+--- a/conf-compile/conf-install-libexec
++++ b/conf-compile/conf-install-libexec
+@@ -1 +1 @@
+-/usr/libexec
++/tmp/execline-release/usr/libexec
+diff --git a/conf-compile/conf-install-library b/conf-compile/conf-install-library
+index aeae73b..cc3ab1b 100644
+--- a/conf-compile/conf-install-library
++++ b/conf-compile/conf-install-library
+@@ -1 +1 @@
+-/usr/lib/execline
++/tmp/execline-release/usr/lib/execline
+diff --git a/conf-compile/conf-install-library.so b/conf-compile/conf-install-library.so
+index 502167f..3491551 100644
+--- a/conf-compile/conf-install-library.so
++++ b/conf-compile/conf-install-library.so
+@@ -1 +1 @@
+-/lib
++/tmp/execline-release/lib
+diff --git a/conf-compile/conf-install-sysdeps b/conf-compile/conf-install-sysdeps
+index 149f73b..9626770 100644
+--- a/conf-compile/conf-install-sysdeps
++++ b/conf-compile/conf-install-sysdeps
+@@ -1 +1 @@
+-/usr/lib/execline/sysdeps
++/tmp/execline-release/usr/lib/execline/sysdeps
+diff --git a/conf-compile/flag-allstatic b/conf-compile/flag-allstatic
+new file mode 100644
+index 0000000..e69de29
+diff --git a/conf-compile/flag-slashpackage b/conf-compile/flag-slashpackage
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/conf-compile/import b/conf-compile/import
+index 8865d30..5ec7e7c 100644
+--- a/conf-compile/import
++++ b/conf-compile/import
+@@ -1 +1 @@
+-$SP_ROOT/package/prog/skalibs/sysdeps
++/usr/lib/skalibs/sysdeps
+diff --git a/conf-compile/path-include b/conf-compile/path-include
+index a391d2d..02da3ef 100644
+--- a/conf-compile/path-include
++++ b/conf-compile/path-include
+@@ -1 +1 @@
+-$SP_ROOT/package/prog/skalibs/include
++/usr/include/skalibs
+diff --git a/conf-compile/path-library b/conf-compile/path-library
+index 50d4242..cb16caa 100644
+--- a/conf-compile/path-library
++++ b/conf-compile/path-library
+@@ -1 +1 @@
+-$SP_ROOT/package/prog/skalibs/library
++/usr/lib/skalibs
+diff --git a/conf-compile/path-library.so b/conf-compile/path-library.so
+index 1f23e8f..0bf940b 100644
+--- a/conf-compile/path-library.so
++++ b/conf-compile/path-library.so
+@@ -1 +1 @@
+-$SP_ROOT/package/prog/skalibs/library.so
++/usr/lib
+diff --git a/src/sys/gen-EXPORT b/src/sys/gen-EXPORT
+index 944b176..8bebcc3 100755
+--- a/src/sys/gen-EXPORT
++++ b/src/sys/gen-EXPORT
+@@ -11,6 +11,7 @@ if test -f EXPORT.header ; then
+   cat < EXPORT.header
+ fi
+ 
++mkdir -p deps-exe
+ ls -1 deps-exe
+ 
+ for file in `ls -1 deps-lib` ; do
