@@ -7,7 +7,7 @@ PACKAGE_VERSION = $$(cat upstream/package/version)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
 
-SKALIBS_VERSION = 1.6.0.0
+SKALIBS_VERSION = 1.6.0.0-1
 SKALIBS_URL = https://github.com/akerl/skalibs/releases/download/$(SKALIBS_VERSION)/skalibs.tar.gz
 SKALIBS_TAR = skalibs.tar.gz
 SKALIBS_DIR = /tmp/skalibs
