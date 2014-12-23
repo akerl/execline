@@ -6,7 +6,7 @@ RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PACKAGE_VERSION = $$(awk -F= '/^version/ {print $$2}' upstream/package/info)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
-CONF_FLAGS = --enable-static --enable-static --enable-allstatic --disable-slashpackage --enable-static-libc
+CONF_FLAGS = --enable-static --enable-allstatic --disable-slashpackage --enable-static-libc
 
 SKALIBS_VERSION = 2.0.0.0-9
 SKALIBS_URL = https://github.com/akerl/skalibs/releases/download/$(SKALIBS_VERSION)/skalibs.tar.gz
