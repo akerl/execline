@@ -6,11 +6,13 @@ RELEASE_FILE = /tmp/$(PACKAGE).tar.gz
 PACKAGE_VERSION = $$(awk -F= '/^version/ {print $$2}' upstream/package/info)
 PATCH_VERSION = $$(cat version)
 VERSION = $(PACKAGE_VERSION)-$(PATCH_VERSION)
+CONF_FLAGS = --enable-static --enable-static --enable-allstatic --disable-slashpackage --enable-static-libc
 
-SKALIBS_VERSION = 2.0.0.0-8
+SKALIBS_VERSION = 2.0.0.0-9
 SKALIBS_URL = https://github.com/akerl/skalibs/releases/download/$(SKALIBS_VERSION)/skalibs.tar.gz
 SKALIBS_TAR = skalibs.tar.gz
 SKALIBS_DIR = /tmp/skalibs
+SKALIBS_PATH = --with-sysdeps=$(SKALIBS_DIR)/usr/lib/skalibs/sysdeps --with-lib=$(SKALIBS_DIR)/usr/lib/skalibs --with-include=$(SKALIBS_DIR)/usr/include --with-dynlib=$(SKALIBS_DIR)/usr/lib
 
 .PHONY : default manual container deps version build push local
 
@@ -34,9 +36,10 @@ deps:
 build: deps
 	rm -rf $(BUILD_DIR)
 	cp -R upstream $(BUILD_DIR)
-	patch -d $(BUILD_DIR) -p1 < patch
+	cd $(BUILD_DIR) && ./configure --prefix=$(RELEASE_DIR) $(CONF_FLAGS) $(SKALIBS_PATH)
+	make -C $(BUILD_DIR)
 	make -C $(BUILD_DIR) install
-	tar -czv -C $(RELEASE_DIR) -f $(RELEASE_FILE) .
+	cd $(RELEASE_DIR) && tar -czvf $(RELEASE_FILE) *
 
 version:
 	@echo $$(($(PATCH_VERSION) + 1)) > version
