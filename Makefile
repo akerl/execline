@@ -19,7 +19,7 @@ SKALIBS_PATH = --with-sysdeps=$(SKALIBS_DIR)/usr/lib/skalibs/sysdeps --with-lib=
 
 .PHONY : default submodule manual container deps version build push local
 
-default: upstream/Makefile container
+default: submodule container
 
 submodule:
 	git submodule update --init
