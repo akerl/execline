@@ -7,16 +7,6 @@ deps(
   skalibs: '2.3.10.0-40',
 )
 
-with_flags = %w(skalibs s6 execline).map do |dep_name|
-  dep_path = dep(dep_name)
-  [
-    :"with-lib=#{dep_path}/usr/lib/#{dep_name}",
-    :"with-lib=#{dep_path}/usr/lib",
-    :"with-include=#{dep_path}/usr/include"
-  ]
-end.flatten
-with_flags = with_flags.map { |x| [x, nil] }.to_h
-
 configure_flags(
   prefix: '/usr',
   'with-include': "#{dep(:skalibs)}/usr/include",
