@@ -10,7 +10,7 @@ deps(
 configure_flags(
   prefix: '/usr',
   'with-include': "#{dep(:skalibs)}/usr/include",
-  'with-lib': "#{dep(:skalibs)}/usr/lib",
+  'with-lib': "#{dep(:skalibs)}/usr/lib/skalibs",
   'with-dynlib': "#{dep(:skalibs)}/usr/lib",
   'with-sysdeps': "#{dep(:skalibs)}/usr/lib/skalibs/sysdeps"
 )
