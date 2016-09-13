@@ -1,6 +1,8 @@
 execline
 =========
 
+[![Build Status](https://img.shields.io/circleci/project/amylum/execline.svg)](https://circleci.com/gh/amylum/execline)
+[![GitHub release](https://img.shields.io/github/release/amylum/execline.svg)](https://github.com/amylum/execline/releases)
 [![ISC Licensed](https://img.shields.io/badge/license-ISC-green.svg)](https://tldrlegal.com/license/-isc-license)
 
 This is my package repo for [execline](http://www.skarnet.org/software/execline/), a scripting language by [Laurent Bercot](http://skarnet.org/).
