@@ -13,7 +13,7 @@ item do
   end
 
   deps do
-   PkgForge.load_from_file.deps.each do |dep_name, current_version|
+    PkgForge.load_from_file.deps.each do |dep_name, current_version|
       item do
         name dep_name
 
