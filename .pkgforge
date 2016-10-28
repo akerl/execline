@@ -4,7 +4,7 @@ org 'amylum'
 licenses 'COPYING'
 
 deps(
-  skalibs: '2.3.10.0-40',
+  skalibs: '2.4.0.0-38',
 )
 
 configure_flags(
