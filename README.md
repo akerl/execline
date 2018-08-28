@@ -1,7 +1,7 @@
 execline
 =========
 
-[![Build Status](https://img.shields.io/circleci/project/amylum/execline/master.svg)](https://circleci.com/gh/amylum/execline)
+[![Build Status](https://img.shields.io/travis/com/amylum/execline.svg)](https://travis-ci.com/amylum/execline)
 [![GitHub release](https://img.shields.io/github/release/amylum/execline.svg)](https://github.com/amylum/execline/releases)
 [![ISC Licensed](https://img.shields.io/badge/license-ISC-green.svg)](https://tldrlegal.com/license/-isc-license)
 
